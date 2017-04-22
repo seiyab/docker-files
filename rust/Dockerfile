@@ -1,11 +1,12 @@
-FROM alpine:latest
+FROM debian:latest
 
-RUN apk --update  --repository http://dl-4.alpinelinux.org/alpine/edge/community add \
-    bash \
+RUN apt-get update && apt-get install -y \
     g++ \
-    rust \
- ** rm -rf /var/chache/apk/*
+    curl \
+ && rm -rf /var/chache/apt/lists/* \
+ &&  curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 WORKDIR /root/share
 
+ENV PATH=/root/.cargo/bin:$PATH
 ENTRYPOINT /bin/bash
