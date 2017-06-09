@@ -31,7 +31,7 @@ RUN mkdir -p $CONDA_DIR && \
 # Python
 ARG python_version=3.5.3-0
 ARG python_qt_version=4
-RUN mkdir -p /src
+RUN mkdir -p /src \
  && conda install -y python=${python_version} && \
     pip install numpy six tensorflow keras prettytensor && \
     pip install ipdb pytest pytest-cov python-coveralls coverage==3.7.1 pytest-xdist pep8 pytest-pep8 pydot_ng && \
