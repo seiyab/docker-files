@@ -7,7 +7,6 @@ RUN /opt/conda/bin/conda install --yes \
     matplotlib \
     numpy \
     pandas \
-    pystan \
     scipy \
     scikit-learn && \
     /opt/conda/bin/conda clean --yes --all
@@ -20,6 +19,6 @@ RUN apt-get update  && apt-get install --yes \
  && mkdir -p /root/.config/matplotlib \
  && echo backend : Qt5Agg > /root/.config/matplotlib/matplotlibrc
 
-WORKDIR /root/share
+WORKDIR /src
 
 ENTRYPOINT /bin/bash
