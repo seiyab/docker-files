@@ -15,7 +15,7 @@ RUN /opt/conda/bin/conda install --yes \
     numpy \
  && /opt/conda/bin/conda clean --yes --all
 
-RUN pip install \
+RUN pip install --no-cache-dir\
     chainer \
     tweepy
 
