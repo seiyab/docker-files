@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir\
     tweepy
 
 # mecab config
-COPY chado_utf8.csv /mecab-dict/
+COPY chado_utf8.csv /mecab-dict/chado.csv
 RUN /usr/lib/mecab/mecab-dict-index \
     -d /var/lib/mecab/dic/ipadic-utf8/ \
     -u /mecab-dict/chado.dic \
