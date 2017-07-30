@@ -3,6 +3,7 @@ FROM continuumio/miniconda3:latest
 MAINTAINER seiyab
 
 RUN apt-get update && apt-get install --yes \
+    g++ \
     libmecab-dev \
     mecab \
     mecab-ipadic \
