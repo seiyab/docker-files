@@ -3,6 +3,7 @@ FROM continuumio/miniconda3:latest
 MAINTAINER seiyab
 
 RUN /opt/conda/bin/conda install --yes \
+    cron \
     ipython \
     matplotlib \
     numpy \
