@@ -3,7 +3,6 @@ FROM continuumio/miniconda3:latest
 MAINTAINER seiyab
 
 RUN /opt/conda/bin/conda install --yes \
-    cron \
     ipython \
     matplotlib \
     numpy \
@@ -15,6 +14,9 @@ RUN /opt/conda/bin/conda install --yes \
 RUN pip install \
     chainer \
     zaifapi
+
+RUN apt-get update && apt-get install --yes cron \
+ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
 
