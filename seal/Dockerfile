@@ -2,6 +2,7 @@ FROM debian
 
 RUN apt-get update && apt-get -y install \
     bzip2 \
+    git \
     g++ \
     make \
     wget \
@@ -19,6 +20,12 @@ COPY seal /seal
 RUN cd /seal/SEAL \
  && ./configure \
  && make install
+
+
+### eigen ###
+RUN mkdir /eigen \
+ && cd /eigen \
+ && git clone https://github.com/eigenteam/eigen-git-mirror.git
 
 ### user ###
 RUN useradd -ms /bin/bash seal
